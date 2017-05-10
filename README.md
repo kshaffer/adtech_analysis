@@ -1,6 +1,6 @@
 # adtech_analysis
 
-Analyze output of [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) interceptiong proxy to uncover hidden data-sharing networks
+Analyze output of [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) intercepting proxy to uncover hidden data-sharing networks.
 
 # Instructions
 
