@@ -14,7 +14,7 @@ for (file_name in files) {
   twitter_ads <- bind_rows(twitter_ads, ad_tech_single)
 }
 
-write_csv(twitter_ads, 'results/twitter_ads.csv')
+write_csv(twitter_ads, '../twitter_advertiser_lists/twitter_ads.csv')
 
 
 # summary statistics
@@ -68,10 +68,10 @@ adnet_similarities <- ad_intersects %>%
   select(site1, site2, share_product) %>%
   spread(site2, share_product)
 
-write_csv(ad_intersects, 'results/twitter_ad_intersections.csv')
+write_csv(ad_intersects, '../twitter_advertiser_lists/twitter_ad_intersections.csv')
 
 # plot share products for each site pair on a heat map
-png(filename = 'plots/twitter_ad_heatmap.png', width=1000, height=800)
+png(filename = '../twitter_advertiser_lists/twitter_ad_heatmap.png', width=1000, height=800)
 
 h <- ad_intersects %>%
   ggplot(aes(site1, site2)) + 
@@ -102,7 +102,7 @@ network <- twitter_ads %>%
 
 # save network graph to file
 # CHANGE FILE NAME HERE
-png(filename = 'plots/twitter_ad_network_graph.png', width=2000, height=1600)
+png(filename = '../twitter_advertiser_lists/twitter_ad_network_graph.png', width=2000, height=1600)
 
 g <- ggraph(network, layout = 'fr') +
   geom_edge_link(aes(edge_alpha = count), show.legend = FALSE, arrow = a) +
